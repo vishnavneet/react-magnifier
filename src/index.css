@@ -11,3 +11,47 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Magnifier css starts */
+.magnifier {
+  position: relative;
+  cursor: cell;
+  background-color: white;
+}
+
+.magnifier img {
+  /* width: 100%;
+  height: auto; */
+  /* keep the above one in your project */
+  width: 300px;
+  height: 300px;
+  display: block;
+}
+
+.magnifier-lens {
+  position: absolute;
+  z-index: 33;
+  left: calc(
+    300px + 10px
+  ); /* distance from right instead 300px keep 100% in your project */
+  top: 0;
+  border: 1px solid #cccccc;
+  width: 300px;
+  height: 300px;
+  cursor: none;
+  overflow: hidden;
+  background-size: 200% 200%;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  background-color: white;
+  display: none; /* Hide by default, display it when zoomed */
+}
+
+.magnifier.zoomed .magnifier-lens {
+  display: block;
+}
+
+@media mq-max(1024px) {
+  width: 300px;
+  height: 300px;
+}
